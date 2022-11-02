@@ -1,0 +1,109 @@
+body {
+  padding: 0px;
+  margin: 0px;
+
+  background: linear-gradient(
+    0deg,
+    rgb(193, 202, 212) 0%,
+    rgba(234, 229, 253, 0) 25%
+  );
+  height: 100vh;
+}
+
+h1 {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  font-size: 3.5em;
+}
+
+.center {
+  text-align: center;
+}
+
+.controller-status {
+  font-weight: bold;
+  text-align: center;
+}
+
+#controller-connected {
+  color: green;
+}
+
+#controller-connected-area {
+  display: none;
+}
+
+#controller-not-connected-area {
+  color: darkred;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+#rumble-on-button-press-area {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.loader {
+  display: inline-block;
+  border: 8px solid #484848;
+  border-radius: 50%;
+  border-top: 8px solid #3498db;
+  border-bottom: 8px solid #3498db;
+  width: 20px;
+  height: 20px;
+  -webkit-animation: spin 1.5s linear infinite;
+  animation: spin 1.5s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* button grid */
+#buttons {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(min-content, max-content));
+  grid-gap: 15px;
+  justify-content: center;
+  justify-items: start;
+}
+
+.button {
+  background-color: rgb(223, 222, 222);
+  height: 50px;
+  min-width: 50px;
+  display: flex;
+}
+
+.button-text-area {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.button-name {
+  color: grey;
+}
+
+/* controller */
+
+.selected-button {
+  fill: rgb(231, 24, 24);
+}
+
+/* axes */
+
+.axis-name {
+  color: grey;
+  font-weight: bolder;
+}
+
+.axis-value {
+  color: rgb(126, 54, 54);
+}
