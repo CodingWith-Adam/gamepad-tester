@@ -107,3 +107,7 @@ h1 {
 .axis-value {
   color: rgb(126, 54, 54);
 }
+
+a {
+  color: red;
+}
