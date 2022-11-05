@@ -1,5 +1,9 @@
 let controllerIndex = null;
 
+//hide axes if url has query string hideAxes.
+const searchParams = new URLSearchParams(window.location.search);
+const hideAxes = searchParams.has("hideAxes");
+
 window.addEventListener("gamepadconnected", (event) => {
   handleConnectDisconnect(event, true);
 });
@@ -24,7 +28,9 @@ function handleConnectDisconnect(event, connected) {
     controllerAreaNotConnected.style.display = "none";
     controllerAreaConnected.style.display = "block";
     createButtonLayout(gamepad.buttons);
-    createAxesLayout(gamepad.axes);
+    if (!hideAxes) {
+      createAxesLayout(gamepad.axes);
+    }
   } else {
     controllerIndex = null;
     controllerAreaNotConnected.style.display = "block";
@@ -116,10 +122,12 @@ function handleSticks(axes) {
 function updateAxesGrid(axes) {
   for (let i = 0; i < axes.length; i++) {
     const axis = document.querySelector(`#axis-${i} .axis-value`);
-    const value = axes[i];
-    // if (value > 0.06 || value < -0.06) {
-    axis.innerHTML = value.toFixed(4);
-    // }
+    if (axis) {
+      const value = axes[i];
+      // if (value > 0.06 || value < -0.06) {
+      axis.innerHTML = value.toFixed(4);
+      // }
+    }
   }
 }
 
