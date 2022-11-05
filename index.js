@@ -124,9 +124,9 @@ function updateAxesGrid(axes) {
     const axis = document.querySelector(`#axis-${i} .axis-value`);
     if (axis) {
       const value = axes[i];
-      // if (value > 0.06 || value < -0.06) {
-      axis.innerHTML = value.toFixed(4);
-      // }
+      if (value > 0.06 || value < -0.06) {
+        axis.innerHTML = value.toFixed(4);
+      }
     }
   }
 }
