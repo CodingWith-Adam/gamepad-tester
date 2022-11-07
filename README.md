@@ -4,7 +4,7 @@
 
 ### Try it here: https://codingwith-adam.github.io/gamepad-tester/
 
-### YouTube Tutorial: https://youtube.com/c/codingwithadam
+### YouTube Tutorial: https://youtu.be/tQyrpcOK6U0
 
 ## Description
 
